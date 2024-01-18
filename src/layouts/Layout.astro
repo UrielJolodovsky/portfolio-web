@@ -1,20 +1,22 @@
 ---
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
+import '@fontsource-variable/outfit';
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" class="rounded-full" type="image" href="/Linkedin_Foto.jpeg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -33,6 +35,6 @@ const { title } = Astro.props;
 		scroll-behavior: smooth;
 	}
 	body {
-  		font-family: 'Onest Variable', sans-serif;
+  		font-family: 'Outfit Variable', sans-serif;
 	}
 </style>
