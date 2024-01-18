@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			keyframes: {
-			radiusMorph: {
+			radiusAboutMe: {
 				"0%": { borderRadius: "56% 44% 42% 58% / 51% 55% 45% 49%" },
 				"25%": { borderRadius: "41% 59% 36% 64% / 61% 55% 45% 39%" },
 				"50%": { borderRadius: "59% 41% 53% 47% / 46% 48% 52% 54%" },
@@ -14,7 +14,7 @@ export default {
 			},
 		},
 		animation: {
-			radiusMorph: "radiusMorph 10s infinite",
+			radiusAboutMe: "radiusAboutMe 10s infinite",
 		},
 	},
 	plugins: [],
