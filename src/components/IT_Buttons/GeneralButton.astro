@@ -8,7 +8,7 @@ interface Props {
 const { title, image, background } = Astro.props
 ---
 
-<div href="https://nextjs.org/" class={`rounded-full px-3 py-1.5 flex ${background} justify-between items-center gap-x-2 cursor-pointer`}>
-    <img src={image} class="w-4" />
-    <span class="text-sm">{title}</span>
+<div class={`rounded-full px-3 py-1.5 flex ${background} justify-between items-center gap-x-2 gap-y-2 cursor-pointer`}>
+    <img src={image} class="w-4 max-h-4" />
+    <span class="text-xs">{title}</span>
 </div>
