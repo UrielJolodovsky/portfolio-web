@@ -1,0 +1,19 @@
+---
+import GeneralButton from '../components/IT_Buttons/GeneralButton.astro'
+---
+
+<div class="max-w-[400px] bg-white/10 hover:bg-white/20 transition rounded-lg shadow-inner shadow-white/25 p-3">
+    <div class="rounded-lg pb-3">
+        <img src="/esland_web.png" alt="" class="w-full h-full object-cover rounded-lg">
+    </div>
+    <div class="flex flex-col justify-start items-start gap-y-3">
+        <h1 class="text-2xl font-semibold">Esland Web</h1>
+        <p class="text-base">
+            Recreación de la página web de los Premios ESLAND mejorando su estilo y funcionalidad. 
+        </p>
+        <div class="flex gap-x-3">
+            <GeneralButton title='Next.js' image='/nextjs_logo.png' background='bg-black' />
+            <GeneralButton title='Tailwind CSS' image='/tailwindcss_logo.png' background='bg-cyan-800' />
+        </div>
+    </div>
+</div>

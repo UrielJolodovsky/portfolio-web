@@ -1,3 +1,10 @@
-<div id="proyectos" class="bg-[#16293a] h-screen w-full">
+---
+import CardProject from "./CardProject.astro"
+---
 
+<div id="proyectos" class="h-screen w-full bg-black/40 shadow-inner shadow-white/30">
+    <h2 class="font-semibold text-3xl text-center p-10">Mis Proyectos</h2>
+    <section class="flex justify-center items-center">
+        <CardProject /> 
+    </section>
 </div>
