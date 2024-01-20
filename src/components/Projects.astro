@@ -2,9 +2,11 @@
 import CardProject from "./CardProject.astro"
 ---
 
-<div id="proyectos" class="h-screen w-full bg-black/40 shadow-inner shadow-white/30">
+<div id="proyectos" class="w-full bg-black/40 shadow-inner shadow-white/20 pb-10">
     <h2 class="font-semibold text-3xl text-center p-10">Mis Proyectos</h2>
-    <section class="flex justify-center items-center">
+    <section class="flex max-w-[1150px] mx-auto justify-between items-center gap-x-10">
+        <CardProject /> 
+        <CardProject /> 
         <CardProject /> 
     </section>
 </div>
