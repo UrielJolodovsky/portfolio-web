@@ -1,12 +1,99 @@
 ---
+import { string } from "astro/zod";
 import CardProject from "./CardProject.astro"
+interface ITech {
+    name: string;
+    image: string;
+    color: string;
+}
+
+ const technologies: {[key: number]: ITech} = {
+    1: {
+        name: "Next.js",
+        image: "/nextjs_logo.png",
+        color: "bg-black",
+    },
+    2: {
+        name: "Tailwind CSS",
+        image: "/tailwindcss_logo.png",
+        color: "bg-cyan-800",
+    },
+    3: {
+        name: "React",
+        image: "/react_logo.png",
+        color: "bg-blue-900",
+    },
+    4: {
+        name: "Prisma",
+        image: "/prisma_logo.png",
+        color: "bg-gray-800",
+    },
+    5: {
+        name: "TypeScript",
+        image: "/typescript_logo.png",
+        color: "bg-blue-900",
+    },
+    6: {
+        name: "Astro",
+        image: "/astro_logo.png",
+        color: "bg-orange-800",
+    },
+    7: {
+        name: "PlanetScale",
+        image: "/planetscale_logo.png",
+        color: "bg-gray-600",
+    },
+    8: {
+        name: "Vercel",
+        image: "/vercel_logo.png",
+        color: "bg-gray-700",
+    }
+ }
+ const technologiesEsland: {[key: number]: ITech} = {
+    2: {
+        name: "Tailwind CSS",
+        image: "/tailwindcss_logo.png",
+        color: "bg-cyan-800",
+    },
+    1: {
+        name: "Astro",
+        image: "/astro_logo.png",
+        color: "bg-orange-800",
+    },
+    3: {
+        name: "Vercel",
+        image: "/vercel_logo.png",
+        color: "bg-gray-700",
+    }
+ }
 ---
 
 <div id="proyectos" class="w-full bg-black/40 shadow-inner shadow-white/20 pb-10">
     <h2 class="font-semibold text-3xl text-center p-10">Mis Proyectos</h2>
     <section class="flex max-w-[1150px] mx-auto justify-between items-center gap-x-10">
-        <CardProject /> 
-        <CardProject /> 
-        <CardProject /> 
+        <CardProject 
+            title="Esland Web" 
+            image="/esland_web.png"
+            content="Recreación de la página web de los Premios ESLAND mejorando su estilo y funcionalidad."
+            tecnologias={technologiesEsland}
+            github="https://github.com/UrielJolodovsky/esland-web"
+            website="https://esland-web-urieljolo.vercel.app"
+        /> 
+        <CardProject 
+            title="Esland Web" 
+            image="/esland_web.png"
+            content="Recreación de la página web de los Premios ESLAND mejorando su estilo y funcionalidad."
+            tecnologias={technologiesEsland}
+            github="https://github.com/UrielJolodovsky/esland-web"
+            website="https://esland-web-urieljolo.vercel.app"
+        /> 
+        <CardProject 
+            title="Esland Web" 
+            image="/esland_web.png"
+            content="Recreación de la página web de los Premios ESLAND mejorando su estilo y funcionalidad."
+            tecnologias={technologies}
+            github="https://github.com/UrielJolodovsky/esland-web"
+            website="https://esland-web-urieljolo.vercel.app"
+        /> 
     </section>
 </div>
