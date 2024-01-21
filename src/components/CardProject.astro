@@ -27,17 +27,13 @@ const { title, image, content, tecnologias, github, website } = Astro.props;
         <p class="text-base text-balance">
             {content}
         </p>
-        <div class="flex flex-wrap gap-3 pb-3">
+        <div class="flex flex-wrap gap-3">
             {Object.keys(tecnologias).map((key) => {
                 const { name, image, color } = tecnologias[Number(key)];
                 return (
                     <GeneralButton title={name} image={image} background={color} />
                 )
             })}
-            <!-- <GeneralButton title='Next.js' image='/nextjs_logo.png' background='bg-black' />
-            <GeneralButton title='Tailwind CSS' image='/tailwindcss_logo.png' background='bg-cyan-800' />
-            <GeneralButton title='Astro' image='/astro_logo.png' background='bg-orange-800' />
-            <GeneralButton title='Prisma' image='/prisma_logo.png' background='bg-gray-800' /> -->
         </div>
         <div class="absolute bottom-3 pr-6 w-full flex justify-center items-center gap-x-5">
             <a target="_blank" href={github} class="flex justify-between items-center gap-x-2 rounded-full px-3 py-1.5 bg-white/20 hover:bg-white/30 transition">

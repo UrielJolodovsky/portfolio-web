@@ -70,7 +70,8 @@ interface ITech {
 
 <div id="proyectos" class="w-full bg-black/40 shadow-inner shadow-white/20 pb-10">
     <h2 class="font-semibold text-3xl text-center p-10">Mis Proyectos</h2>
-    <section class="flex max-w-[1150px] mx-auto justify-between items-center gap-x-10">
+    <section class="max-w-[1150px] mx-auto grid grid-cols-1 md:grid-cols-2 rx:grid-cols-3 gap-y-10">
+        <div class="flex justify-center items-center">
         <CardProject 
             title="Esland Web" 
             image="/esland_web.png"
@@ -79,6 +80,8 @@ interface ITech {
             github="https://github.com/UrielJolodovsky/esland-web"
             website="https://esland-web-urieljolo.vercel.app"
         /> 
+        </div>
+        <div class="flex justify-center items-center">
         <CardProject 
             title="Esland Web" 
             image="/esland_web.png"
@@ -87,6 +90,8 @@ interface ITech {
             github="https://github.com/UrielJolodovsky/esland-web"
             website="https://esland-web-urieljolo.vercel.app"
         /> 
+        </div>
+        <div class="flex justify-center items-center">
         <CardProject 
             title="Esland Web" 
             image="/esland_web.png"
@@ -95,5 +100,6 @@ interface ITech {
             github="https://github.com/UrielJolodovsky/esland-web"
             website="https://esland-web-urieljolo.vercel.app"
         /> 
+        </div>
     </section>
 </div>
