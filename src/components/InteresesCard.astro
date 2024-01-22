@@ -8,7 +8,7 @@ const {title, subtitle} = Astro.props
 ---
 
 <article class={`${Astro.props.class} relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 group overflow-hidden`}>
-    <div class="absolute z-10 top-0 bottom-0 w-full h-full bg-gradient-to-b from-transparent from-40% via-black/20 to-black/60">
+    <div class="absolute z-20 top-0 bottom-0 w-full h-full bg-gradient-to-b from-transparent from-40% via-black/20 to-black/30">
     </div>
     <slot name="image"></slot>
     <div class="flex select-none flex-col gap-1 p-6 text-lg z-20 justify-end h-full">
