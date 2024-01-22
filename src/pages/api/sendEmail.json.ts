@@ -8,7 +8,7 @@ export const POST:APIRoute = async ({params, request}) => {
   const body = await request.json()
   const { name, email, message } = body
   const info = await transporter.sendMail({
-      ...emailPayload(email),
+      ...emailPayload('urieljolo@gmail.com'),
       subject: `Message sent by ${name} - ${email}`,
       text: message,
     })
