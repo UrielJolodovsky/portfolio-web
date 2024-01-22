@@ -8,10 +8,32 @@
             <input class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text">
             <label class="text-white font-semibold px-2" for="mensaje">Mensaje</label>
             <textarea class="bg-white/20 border-2 border-black/40 rounded-lg p-2" name="" id="" cols="30" rows="5"></textarea>
-            <button type="submit" class="bg-white/20 hover:bg-white/30 text-white font-semibold rounded-full transition p-2 w-32">Enviar</button>
+            <button id="form-submit" type="submit" class="bg-white/20 hover:bg-white/30 text-white font-semibold rounded-full transition p-2 w-32">Enviar</button>
         </form>
         <div>
             <!-- Contact Details -->
             <h2>Contact Details</h2>
         </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('form-submit')
+        form?.addEventListener('click', async(e) => {
+            e.preventDefault()
+            const res = await fetch("/api/sendEmail.json", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: 'Roberto Mainetti',
+                    email: 'urieljolo@gmail.com',
+                    message: 'Buenaaaas',
+                }),
+            })
+            const data = await res.json()
+            console.log(data.message)
+        })
+    })
+</script>
