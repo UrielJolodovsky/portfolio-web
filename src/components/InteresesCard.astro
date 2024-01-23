@@ -14,6 +14,5 @@ const {title, subtitle} = Astro.props
     <div class="flex select-none flex-col gap-1 p-6 text-lg z-20 justify-end h-full">
         <h2 class="font-bold text-xl md:text-2xl text-balance text-white mb-4 z-20">{title}</h2>
         {subtitle && <h3 class="text-xl font-semibold mb-4 -mt-4 text-white">{subtitle}</h3>}
-        <slot name="content"></slot>
     </div>
 </article>
