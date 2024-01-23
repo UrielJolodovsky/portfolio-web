@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import astro_logo from 'public/astro_logo.png';
 
 interface Props {
     title: string;
-    image: string;
+    image: ImageMetadata;
     background: string;
 }
 
@@ -12,6 +11,6 @@ const { title, image, background } = Astro.props
 ---
 
 <div class={`rounded-full px-3 py-1.5 flex ${background} justify-between items-center gap-x-2 gap-y-2 cursor-pointer`}>
-    <img src={image} class="w-4 max-h-4" />
+    <Image src={image} class="w-4 max-h-4" alt='' />
     <span class="text-xs">{title}</span>
 </div>

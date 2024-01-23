@@ -1,125 +1,134 @@
 ---
+import astro_logo from '/public/astro_logo.png';
+import nextjs_logo from '/public/nextjs_logo.png';
+import react_logo from '/public/react_logo.png';
+import tailwind_logo from '/public/tailwindcss_logo.png';
+import typescript_logo from '/public/typescript_logo.png';
+import vercel_logo from '/public/vercel_logo.png';
+import prisma_logo from '/public/prisma_logo.png';
+import planetscale_logo from '/public/planetscale_logo.png';
+
 interface ITech {
     name: string;
-    image: string;
+    image: ImageMetadata;
     color: string;
 }
 
 export const technologies: {[key: number]: ITech} = {
     1: {
         name: "Next.js",
-        image: "/nextjs_logo.png",
+        image: nextjs_logo,
         color: "bg-black",
     },
     2: {
         name: "Tailwind CSS",
-        image: "/tailwindcss_logo.png",
+        image: tailwind_logo,
         color: "bg-cyan-800",
     },
     3: {
         name: "React",
-        image: "/react_logo.png",
+        image: react_logo,
         color: "bg-blue-900",
     },
     4: {
         name: "Prisma",
-        image: "/prisma_logo.png",
+        image: prisma_logo,
         color: "bg-gray-800",
     },
     5: {
         name: "TypeScript",
-        image: "/typescript_logo.png",
+        image: typescript_logo,
         color: "bg-blue-900",
     },
     6: {
         name: "Astro",
-        image: "/astro_logo.png",
+        image: astro_logo,
         color: "bg-orange-800",
     },
     7: {
         name: "PlanetScale",
-        image: "/planetscale_logo.png",
+        image: planetscale_logo,
         color: "bg-gray-600",
     },
     8: {
         name: "Vercel",
-        image: "/vercel_logo.png",
+        image: vercel_logo,
         color: "bg-gray-700",
     }
  }
  export const technologiesEsland: {[key: number]: ITech} = {
     2: {
         name: "Tailwind CSS",
-        image: "/tailwindcss_logo.png",
+        image: tailwind_logo,
         color: "bg-cyan-800",
     },
     1: {
         name: "Astro",
-        image: "/astro_logo.png",
+        image: astro_logo,
         color: "bg-orange-800",
     },
     3: {
         name: "Vercel",
-        image: "/vercel_logo.png",
+        image: vercel_logo,
         color: "bg-gray-700",
     }
  }
  export const technologiesMuseon: {[key: number]: ITech} = {
     1: {
         name: "Next.js",
-        image: "/nextjs_logo.png",
+        image: nextjs_logo,
         color: "bg-black",
     },
     2: {
         name: "React",
-        image: "/react_logo.png",
+        image: react_logo,
         color: "bg-blue-900",
     },
     5: {
         name: "Prisma",
-        image: "/prisma_logo.png",
+        image: prisma_logo,
         color: "bg-gray-800",
     },
     4: {
         name: "TypeScript",
-        image: "/typescript_logo.png",
+        image: typescript_logo,
         color: "bg-blue-900",
     },
     3: {
         name: "PlanetScale",
-        image: "/planetscale_logo.png",
+        image: planetscale_logo,
         color: "bg-gray-600",
     },
     6: {
         name: "Vercel",
-        image: "/vercel_logo.png",
+        image: vercel_logo,
         color: "bg-gray-700",
     }
  }
  export const technologiesWordle: {[key: number]: ITech} = {
     1: {
         name: "Next.js",
-        image: "/nextjs_logo.png",
+        image: nextjs_logo,
         color: "bg-black",
     },
     2: {
         name: "Tailwind CSS",
-        image: "/tailwindcss_logo.png",
+        image: tailwind_logo,
         color: "bg-cyan-800",
     },
     3: {
         name: "React",
-        image: "/react_logo.png",
+        image: react_logo,
         color: "bg-blue-900",
     },
     4: {
         name: "TypeScript",
-        image: "/typescript_logo.png",
+        image: typescript_logo,
         color: "bg-blue-900",
     },
     5: {
         name: "Vercel",
-        image: "/vercel_logo.png",
+        image: vercel_logo,
         color: "bg-gray-700",
     }
 }
