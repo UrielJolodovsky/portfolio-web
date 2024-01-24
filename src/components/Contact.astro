@@ -51,7 +51,7 @@
             name.classList.toggle('animate-pulse')
             email.classList.toggle('animate-pulse')
             message.classList.toggle('animate-pulse')
-            const res = await fetch("/api/sendEmail.json.ts", {
+            const res = await fetch("/api/sendEmail.json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
