@@ -19,10 +19,15 @@ export default {
 				"75%": { borderRadius: "49% 51% 38% 62% / 58% 51% 49% 42%" },
 				"100%": { borderRadius: "56% 44% 42% 58% / 51% 55% 45% 49%" },
 			  },
+			pulse: {
+				"0%, 100%": { opacity: 1 },
+				"50%": { opacity: .5 },
+			}  
 			},
 		},
 		animation: {
 			radiusAboutMe: "radiusAboutMe 10s infinite",
+			pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
 		},
 	},
 	plugins: [],

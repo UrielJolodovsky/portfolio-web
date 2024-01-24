@@ -12,7 +12,6 @@ export const POST:APIRoute = async ({params, request}) => {
       subject: `Message sent by ${name} - ${email}`,
       text: message,
     })
-    console.log(info)
     
     if (info.accepted.length) {
       return new Response(
