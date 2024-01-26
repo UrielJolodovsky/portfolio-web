@@ -11,7 +11,7 @@ export const transporter = nodemailer.createTransport({
 
 export const emailPayload = (email: string) => {
     return {
-        from: 'urieljolo@gmail.com',
-        to: email
+        from: email,
+        to: 'urieljolo@gmail.com'
     }
 }
