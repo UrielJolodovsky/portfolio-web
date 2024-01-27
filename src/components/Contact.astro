@@ -3,17 +3,17 @@
     <p class="text-center text-white/80 text-base max-w-[600px] sm:px-0 px-4 mx-auto">Contáctame enviando un correo a <a target="_blank" class="text-white/80 hover:text-white/60 underline" href="mailto:urieljolo@gmail.com">urieljolo@gmail.com</a> o a través de este formulario.</p>
         <form class="flex flex-col gap-y-3 p-4 rounded-lg max-w-[550px] mx-auto">
             <label class="text-white font-semibold px-2" for="nombre">Nombre</label>
-            <input id="nombre" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text" />
+            <input id="nombre" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text" required/>
             <label class="text-white font-semibold px-2" for="correo">Correo</label>
-            <input id="correo" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text">
+            <input id="correo" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="email" required />
             <label class="text-white font-semibold px-2" for="mensaje">Mensaje</label>
-            <textarea class="bg-white/20 border-2 border-black/40 rounded-lg p-2" id="mensaje" cols="30" rows="5"></textarea>
+            <textarea class="bg-white/20 border-2 border-black/40 rounded-lg p-2" id="mensaje" cols="30" rows="5" required></textarea>
             <!-- <button class="g-recaptcha" data-sitekey="6LcdnFopAAAAAIrgCP8jipsKIXBsu_EvIrb6oHWd" data-callback="" data-action="">Hola</button> -->
-            <div id="form-submit" class="bg-white/20 hover:bg-white/30 rounded-full transition p-2 w-32 flex justify-center items-center gap-x-3">
+            <button type="submit" id="form-submit" class="bg-white/20 hover:bg-white/30 rounded-full transition p-2 w-32 flex justify-center items-center gap-x-3">
                 <svg id="loader" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".3" stop-color="#FFFFFF" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FFFFFF" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FFFFFF" stop-opacity=".3"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle>
                 </svg>
-                <button type="submit" class="text-white font-semibold">Enviar</button>
-            </div>
+                <span class="text-white font-semibold">Enviar</span> 
+            </button>
         </form>
         <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8">
         <div class="sm:flex sm:justify-between sm:items-center">
@@ -47,6 +47,10 @@
         const loader = document.getElementById('loader')
         form?.addEventListener('click', async(e) => {
             e.preventDefault()
+            if (name?.value === "") name.placeholder = 'Nombre requerido'
+            else if (email?.value === "") email.placeholder = 'Correo requerido'
+            else if (message?.value === "") message.placeholder = 'Mensaje requerido'
+            else {
             loader?.classList.toggle('hidden')
             name.classList.toggle('animate-pulse')
             email.classList.toggle('animate-pulse')
@@ -73,6 +77,8 @@
             name.placeholder = ''
             email.placeholder = ''
             message.placeholder = ''
+        }
         })
     })
+
 </script>
