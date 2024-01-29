@@ -73,4 +73,18 @@ const { title, description } = Astro.props;
       ::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.5);
       }
+
+	  #header-nav {
+		animation: blur linear both;
+		animation-timeline: scroll();
+		animation-range: 0 300px;
+	}
+	@keyframes blur {
+		to {
+			box-shadow: 0px 3px 50px -5px hsla(0, 0%, 100%, 0.1),
+			0px 2px 0 1px hsla(0, 0%, 100%, 0.1);
+			background: rgba(0, 0, 0, .3);
+			backdrop-filter: blur(12px);
+		}
+	}
 </style>
