@@ -1,44 +1,89 @@
 ---
+const premios = [
+    {
+        fecha: "Octubre 2017",
+        competencia: "Certamen Nacional Ñandú - Segundo Nivel",
+        premio: "Campeón",
+        url: "https://www.oma.org.ar/nacional/resultados-omn26nac.html",
+    },
+    {
+        fecha: "Mayo 2018",
+        competencia: "Olimpiada de Mayo - Primer Nivel",
+        premio: "Mención de Honor",
+        url: "https://www.oma.org.ar/internacional/resultados_generales-may24.html"
+    },
+    {
+        fecha: "Octubre 2018",
+        competencia: "Certamen Nacional Ñandú - Tercer Nivel",
+        premio: "2do Subcampeón",
+        url: "https://www.oma.org.ar/nacional/resultados-omn27nac.html",
+    },
+    {
+        fecha: "Diciembre 2018",
+        competencia: "Olimpiada Rioplatense - Nivel A",
+        premio: "Medalla de Plata",
+        url: "https://www.oma.org.ar/internacional/resultados-omr27.html",
+    },
+    {
+        fecha: "Octubre 2019",
+        competencia: "Olimpiada Iraní de Geometría",
+        premio: "Medalla de Bronce",
+        url: "https://www.oma.org.ar/internacional/resultados-IGO6.html",
+    },
+    {
+        fecha: "Noviembre 2020",
+        competencia: "Olimpiada de Mayo - Segundo Nivel",
+        premio: "Medalla de Plata",
+        url: "https://www.oma.org.ar/internacional/resultados_generales-may26.html",
+    },
+    {
+        fecha: "Diciembre 2020",
+        competencia: "Certamen Nacional OMA - Primer Nivel",
+        premio: "1er Subcampeón",
+        url: "https://www.oma.org.ar/nacional/campeones-oma37nac.html",
+    },
+    {
+        fecha: "Noviembre 2021",
+        competencia: "Olimpiada del Cono Sur",
+        premio: "Medalla de Bronce",
+        url: "https://www.oma.org.ar/internacional/resultados-con32.html",
+    },
+    {
+        fecha: "Agosto 2023",
+        competencia: "Asian Pacific Mathematical Olympiad",
+        premio: "Medalla de Bronce",
+        url: "https://www.oma.org.ar/internacional/resultados-pac35.html",
+    },
+    {
+        fecha: "Noviembre 2023",
+        competencia: "Certamen Nacional OMA - Tercer Nivel",
+        premio: "1er Subcampeón",
+        url: "https://www.oma.org.ar/nacional/campeones-oma40nac.html",
+    },
+    {
+        fecha: "Diciembre 2023",
+        competencia: "Olimpiada Rioplatense - Nivel 3",
+        premio: "Medalla de Bronce",
+        url: "https://www.oma.org.ar/internacional/resultados-omr30.html",
+    }
 
+]
 ---
 <div class="min-h-screen w-full flex justify-center items-center sm:p-20 p-10">
     <div class="w-4/5 h-auto max-w-[800px] my-auto relative sm:before:content-[''] sm:before:absolute sm:before:h-full sm:before:w-0.5 md:before:left-1/2 sm:before:left-0 sm:before:bg-gray-400 md:before:-translate-x-1/2 sm:before:-translate-x-10">
         <ul class="list-none">
-            <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
-                <div class="">
-                    <h2 class="text-sm mb-2 sm:absolute -top-7">20th may 2010</h2>
-                    <h1 class="text-2xl mb-2">Heading 1</h1>
-                    <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut veniam quisquam sed corporis voluptate! Nobis ducimus aspernatur odio magni eius!</p>
-                </div>
-            </li>
-            <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
-                <div class="">
-                    <h2 class="text-sm mb-2 md:absolute -top-7">20th may 2010</h2>
-                    <h1 class="text-2xl mb-2">Heading 2</h1>
-                    <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut veniam quisquam sed corporis voluptate! Nobis ducimus aspernatur odio magni eius!</p>
-                </div>
-            </li>
-            <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
-                <div class="">
-                    <h2 class="text-sm mb-2 md:absolute -top-7">20th may 2010</h2>
-                    <h1 class="text-2xl mb-2">Heading 3</h1>
-                    <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut veniam quisquam sed corporis voluptate! Nobis ducimus aspernatur odio magni eius!</p>
-                </div>
-            </li>
-            <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
-                <div class="">
-                    <h2 class="text-sm mb-2 md:absolute -top-7">20th may 2010</h2>
-                    <h1 class="text-2xl mb-2">Heading 4</h1>
-                    <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut veniam quisquam sed corporis voluptate! Nobis ducimus aspernatur odio magni eius!</p>
-                </div>
-            </li>
-            <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
-                <div class="">
-                    <h2 class="text-sm mb-2 md:absolute -top-7">20th may 2010</h2>
-                    <h1 class="text-2xl mb-2">Heading 5</h1>
-                    <p class="text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut veniam quisquam sed corporis voluptate! Nobis ducimus aspernatur odio magni eius!</p>
-                </div>
-            </li>
+            {premios.map(premio => {
+                return(
+                <li class="p-5 bg-white/15 rounded-[10px] mb-5 md:w-1/2 md:mb-12 md:relative last-of-type:mb-0 md:odd:float-left md:odd:clear-right md:even:float-right md:even:clear-left md:odd:-translate-x-7 md:even:translate-x-7 md:after:content-[''] md:after:absolute md:after:h-5 md:after:w-5 md:after:bg-gray-400 md:after:rounded-[50%] md:after:top-0 md:odd:after:-right-7 md:odd:after:translate-x-1/2 md:odd:after:-translate-y-1/2 md:even:after:-left-7 md:even:after:-translate-x-1/2 md:even:after:-translate-y-1/2 hover:after:bg-cyan-400">
+                    <div class="">
+                        <h2 class="text-sm mb-2 sm:absolute -top-7">{premio.fecha}</h2>
+                        <h1 class="text-xl mb-0">{premio.competencia}</h1>
+                        <p class="text-base mb-1">{premio.premio}</p>
+                        <a href={premio.url} target="_blank" class="text-sm underline hover:text-white/60 transition">Ir a la página oficial</a>
+                    </div>
+                </li>
+                )
+            })}
         </ul>
     </div>
 </div>

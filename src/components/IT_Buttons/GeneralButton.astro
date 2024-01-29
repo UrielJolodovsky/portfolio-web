@@ -11,6 +11,6 @@ const { title, image, background } = Astro.props
 ---
 
 <div class={`rounded-full px-3 py-1.5 flex ${background} justify-between items-center gap-x-2 gap-y-2 cursor-pointer`}>
-    <Image src={image} class="w-4 max-h-4" alt='' />
+    <Image src={image} class="w-4 max-h-4" alt=`${title}` />
     <span class="text-xs">{title}</span>
 </div>

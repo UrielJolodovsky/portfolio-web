@@ -26,7 +26,7 @@ export default {
 			},
 		},
 		animation: {
-			radiusAboutMe: "radiusAboutMe 10s infinite",
+			radiusAboutMe: "radiusAboutMe 8s infinite",
 			pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
 		},
 	},
