@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
 import '@fontsource-variable/outfit';
+const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY; ;
 interface Props {
 	title: string;
 	description: string;
