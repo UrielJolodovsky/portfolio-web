@@ -40,22 +40,6 @@ const { title, description } = Astro.props;
   		font-family: 'Outfit Variable', sans-serif;
 		overflow-x: hidden;
 	}
-	.typewriter {
-		overflow: hidden; /* Ensures the content is not revealed until the animation */
-		border-right: .08em solid cyan; /* The typewriter cursor */
-		width: 0;
-		white-space: nowrap; /* Keeps the content on a single line */
-		animation: typing 1.5s steps(20, end) forwards, blinking .75s step-end forwards;
-	}
-	/* The typewriter cursor effect */
-	@keyframes typing {
-		from { width: 0 }
-		to { width: 100% }
-	}
-	@keyframes blinking {
-		50% { border-color: transparent }
-		100% { border-color: cyan }
-	}
 	::-webkit-scrollbar {
         width: 8px;
       }
