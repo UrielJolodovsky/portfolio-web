@@ -1,0 +1,18 @@
+---
+const { url } = Astro
+
+let imgBanner: string = '';
+let imgPosition: string = 'object-center';
+if (url.pathname === '/interests/bet-hilel') {
+    imgBanner = "/bet-hilel2.jpg"
+}
+if (url.pathname === '/interests/ort') {
+    imgBanner = "/ort.jpg"
+    imgPosition = 'object-right'
+}
+if (url.pathname === '/interests/matematicas') {
+    imgBanner = "/rioplatense.jpg"
+}
+---
+
+<img class=`w-screen h-screen object-cover z-0 ${imgPosition}` src={imgBanner} alt={"Bet-Hilel"} />

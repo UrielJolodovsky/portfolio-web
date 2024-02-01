@@ -1,13 +1,13 @@
 <div id="contacto" class="w-full h-full bg-black/40 shadow-inner shadow-white/30 pb-5">
     <h2 class="font-semibold text-3xl text-center p-10">Contacto</h2>
     <p class="text-center text-white/80 text-base max-w-[600px] sm:px-0 px-4 mx-auto">Contáctame enviando un correo a <a target="_blank" class="text-white/80 hover:text-white/60 underline" href="mailto:urieljolo@gmail.com">urieljolo@gmail.com</a> o a través de este formulario.</p>
-        <form class="flex flex-col gap-y-3 p-4 rounded-lg max-w-[550px] mx-auto">
+        <form id="form-contact" class="flex flex-col gap-y-3 p-4 rounded-lg max-w-[550px] mx-auto" action="https://formspree.io/f/mleqjeep" method="POST">
             <label class="text-white font-semibold px-2" for="nombre">Nombre</label>
-            <input id="nombre" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text" required/>
+            <input name="nombre" id="nombre" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text" required>
             <label class="text-white font-semibold px-2" for="correo">Correo</label>
-            <input id="correo" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="email" required />
+            <input name="correo" id="correo" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="email" required>
             <label class="text-white font-semibold px-2" for="mensaje">Mensaje</label>
-            <textarea class="bg-white/20 border-2 border-black/40 rounded-lg p-2" id="mensaje" cols="30" rows="5" required></textarea>
+            <textarea name="Mensaje" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" id="mensaje" cols="30" rows="5" required></textarea>
             <!-- <button class="g-recaptcha" data-sitekey={import.meta.env.CAPTCHA_SITE_KEY} data-callback="onSubmit" data-action="submit">Click me</button> -->
             <button type="submit" id="form-submit" class="bg-white/20 hover:bg-white/30 rounded-full transition p-2 w-32 flex justify-center items-center gap-x-3">
                 <svg id="loader" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".3" stop-color="#FFFFFF" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FFFFFF" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FFFFFF" stop-opacity=".3"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle>
@@ -38,7 +38,7 @@
         </div>
 </div>
 
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('form-submit')
         const name = document.getElementById('nombre') as HTMLInputElement
@@ -78,6 +78,24 @@
             email.placeholder = ''
             message.placeholder = ''
         }
+        })
+    })
+</script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('form-submit') as HTMLButtonElement
+        const form_contact = document.getElementById('form-contact') as HTMLFormElement
+        const name = document.getElementById('nombre') as HTMLInputElement
+        const email = document.getElementById('correo') as HTMLInputElement
+        const message = document.getElementById('mensaje') as HTMLInputElement
+        const loader = document.getElementById('loader')
+        form?.addEventListener('submit', function (e) {
+            e.preventDefault()
+            form_contact.reset()
+            // name.value = ""
+            // email.value = ""
+            // message.value = ""
         })
     })
 </script>
