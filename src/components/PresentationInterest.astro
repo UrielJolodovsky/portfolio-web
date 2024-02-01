@@ -3,14 +3,14 @@ const { url } = Astro
 
 let imgBanner: string = '';
 let imgPosition: string = 'object-center';
-if (url.pathname === '/interests/bet-hilel') {
+if (url.pathname === '/interests/bet-hilel' || url.pathname === '/interests/bet-hilel/') {
     imgBanner = "/bet-hilel2.jpg"
 }
-if (url.pathname === '/interests/ort') {
+if (url.pathname === '/interests/ort' || url.pathname === '/interests/ort/') {
     imgBanner = "/ort.jpg"
     imgPosition = 'object-right'
 }
-if (url.pathname === '/interests/matematicas') {
+if (url.pathname === '/interests/matematicas' || url.pathname === '/interests/matematicas/') {
     imgBanner = "/rioplatense.jpg"
 }
 ---
