@@ -42,4 +42,4 @@ All commands are run from the root of the project, from a terminal (running it l
 - [x] Generalizar Presentation{Interes} en un solo archivo .astro que sea dinámico.
 - [x] Realizar el envío del formulario de Contacto mediante el Frontend para poder mantener la web en Github Pages.
 - [ ] Limpiar los inputs al mandar exitosamente el formulario de Contacto.
-- [ ] Actualizar CV adjunto en la web.
+- [x] Actualizar CV adjunto en la web.
