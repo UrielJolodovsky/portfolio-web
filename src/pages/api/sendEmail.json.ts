@@ -1,5 +1,4 @@
 import type { APIRoute } from "astro"
-import nodemailer from "nodemailer"
 import { emailPayload } from "../../lib/config/nodemailer"
 import { transporter } from "../../lib/config/nodemailer"
 
