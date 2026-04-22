@@ -3,32 +3,51 @@ interface Props {
     eyebrow?: string;
     title: string;
     class?: string;
+    accent?: "cyan" | "violet" | "emerald" | "indigo";
 }
-const { eyebrow, title, class: className = "" } = Astro.props;
+const { eyebrow, title, class: className = "", accent = "cyan" } = Astro.props;
+
+const accents = {
+    cyan: {
+        text: "text-cyan-300",
+        dot: "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.9)]",
+        gradient: "from-cyan-300 via-blue-400 to-blue-600",
+        bar: "from-cyan-400 via-blue-400 to-blue-600 shadow-[0_0_24px_rgba(34,211,238,0.6)]",
+    },
+    violet: {
+        text: "text-violet-300",
+        dot: "bg-violet-400 shadow-[0_0_10px_rgba(167,139,250,0.9)]",
+        gradient: "from-violet-300 via-fuchsia-400 to-pink-500",
+        bar: "from-violet-400 via-fuchsia-400 to-pink-500 shadow-[0_0_24px_rgba(167,139,250,0.6)]",
+    },
+    emerald: {
+        text: "text-emerald-300",
+        dot: "bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]",
+        gradient: "from-emerald-300 via-teal-400 to-cyan-500",
+        bar: "from-emerald-400 via-teal-400 to-cyan-500 shadow-[0_0_24px_rgba(52,211,153,0.6)]",
+    },
+    indigo: {
+        text: "text-indigo-300",
+        dot: "bg-indigo-400 shadow-[0_0_10px_rgba(129,140,248,0.9)]",
+        gradient: "from-indigo-300 via-blue-400 to-cyan-400",
+        bar: "from-indigo-400 via-blue-400 to-cyan-400 shadow-[0_0_24px_rgba(129,140,248,0.6)]",
+    },
+};
+const a = accents[accent];
 ---
 
-<div class:list={["text-center pt-12 pb-8 px-4", className]}>
+<div class:list={["text-center pt-14 pb-10 px-4 relative", className]}>
     {
         eyebrow && (
-            <p class="inline-flex items-center gap-2 text-cyan-300 text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold mb-3">
-                <span
-                    class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] animate-pulse"
-                    aria-hidden="true"
-                />
+            <p class:list={["inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold mb-4", a.text]}>
+                <span class:list={["w-1.5 h-1.5 rounded-full animate-pulse", a.dot]} aria-hidden="true" />
                 {eyebrow}
-                <span
-                    class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] animate-pulse"
-                    aria-hidden="true"
-                />
+                <span class:list={["w-1.5 h-1.5 rounded-full animate-pulse", a.dot]} aria-hidden="true" />
             </p>
         )
     }
-    <h2 class="font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+    <h2 class:list={["font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(34,211,238,0.25)]", a.gradient]}>
         {title}
     </h2>
-    <div
-        class="w-24 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600 mx-auto rounded-full mt-5 shadow-[0_0_20px_rgba(34,211,238,0.5)]"
-        aria-hidden="true"
-    >
-    </div>
+    <div class:list={["w-28 h-1 mx-auto rounded-full mt-6 bg-gradient-to-r", a.bar]} aria-hidden="true"></div>
 </div>

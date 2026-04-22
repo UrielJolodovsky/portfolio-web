@@ -3,15 +3,16 @@ import { experiences } from "../lib/experience";
 import SectionTitle from "./SectionTitle.astro";
 ---
 
-<div id="experiencia" class="w-full bg-black/40 shadow-inner shadow-white/20 pb-16 relative overflow-hidden">
-    <div class="absolute top-20 -left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute bottom-20 -right-20 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+<div id="experiencia" class="w-full bg-[#0d1226] shadow-inner shadow-white/10 pb-20 relative overflow-hidden">
+    <div class="section-divider absolute top-0 left-0 right-0" aria-hidden="true"></div>
+    <div class="absolute top-20 -left-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-20 -right-20 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-    <SectionTitle eyebrow="Mi trayectoria" title="Experiencia" />
+    <SectionTitle eyebrow="Mi trayectoria" title="Experiencia" accent="emerald" />
 
     <div class="max-w-[900px] mx-auto px-5 sm:px-10 relative">
         <div
-            class="absolute left-5 sm:left-10 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-400/60 via-white/20 to-transparent"
+            class="absolute left-5 sm:left-10 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-emerald-400/60 via-cyan-400/30 to-transparent"
             aria-hidden="true"
         ></div>
 
