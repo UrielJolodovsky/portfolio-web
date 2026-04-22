@@ -1,0 +1,181 @@
+---
+import { experiences } from "../lib/experience";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<div id="experiencia" class="w-full bg-black/40 shadow-inner shadow-white/20 pb-16 relative overflow-hidden">
+    <div class="absolute top-20 -left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-20 -right-20 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <SectionTitle eyebrow="Mi trayectoria" title="Experiencia" />
+
+    <div class="max-w-[900px] mx-auto px-5 sm:px-10 relative">
+        <div
+            class="absolute left-5 sm:left-10 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-cyan-400/60 via-white/20 to-transparent"
+            aria-hidden="true"
+        ></div>
+
+        <ul class="list-none flex flex-col gap-y-10">
+            {
+                experiences.map((exp, i) => {
+                    const isLeft = i % 2 === 0;
+                    return (
+                        <li
+                            class:list={[
+                                "relative md:w-1/2",
+                                isLeft
+                                    ? "md:pr-10 md:self-start md:text-right"
+                                    : "md:pl-10 md:self-end md:ml-auto",
+                            ]}
+                        >
+                            <span
+                                class:list={[
+                                    "absolute top-6 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-cyan-400/20 shadow-lg shadow-cyan-400/40",
+                                    "left-0 -translate-x-1/2",
+                                    isLeft &&
+                                        "md:left-auto md:right-0 md:translate-x-1/2",
+                                ]}
+                                aria-hidden="true"
+                            ></span>
+
+                            <article
+                                class:list={[
+                                    "ml-10 md:ml-0 p-5 sm:p-6 rounded-xl bg-white/10 hover:bg-white/15 backdrop-blur-sm",
+                                    "shadow-inner shadow-white/20 border-l-4",
+                                    "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-400/20",
+                                    exp.accentColor,
+                                ]}
+                            >
+                                <p class="text-xs sm:text-sm text-cyan-300/90 font-medium mb-2">
+                                    {exp.startDate} — {exp.endDate}
+                                </p>
+                                <h3 class="text-lg sm:text-xl font-semibold text-white">
+                                    {exp.role}
+                                </h3>
+                                <div
+                                    class:list={[
+                                        "mt-2 mb-4 flex",
+                                        isLeft
+                                            ? "md:justify-end"
+                                            : "md:justify-start",
+                                    ]}
+                                >
+                                    {exp.companyUrl ? (
+                                        <a
+                                            href={exp.companyUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group/company inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm sm:text-base text-white hover:bg-cyan-400/20 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-400/30 transition-all duration-300"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="w-4 h-4 text-cyan-300"
+                                            >
+                                                <path d="M3 21h18" />
+                                                <path d="M5 21V7l8-4v18" />
+                                                <path d="M19 21V11l-6-4" />
+                                            </svg>
+                                            <span class="font-medium">{exp.company}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="w-3.5 h-3.5 text-cyan-300 transition-transform duration-300 group-hover/company:translate-x-0.5 group-hover/company:-translate-y-0.5"
+                                            >
+                                                <path d="M7 17L17 7" />
+                                                <path d="M7 7h10v10" />
+                                            </svg>
+                                        </a>
+                                    ) : (
+                                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm sm:text-base text-white/80">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="w-4 h-4 text-white/60"
+                                            >
+                                                <path d="M3 21h18" />
+                                                <path d="M5 21V7l8-4v18" />
+                                                <path d="M19 21V11l-6-4" />
+                                            </svg>
+                                            <span class="font-medium">{exp.company}</span>
+                                        </span>
+                                    )}
+                                </div>
+                                <p class="text-sm sm:text-base text-white/85 text-balance md:text-left">
+                                    {exp.description}
+                                </p>
+                                {exp.technologies.length > 0 && (
+                                    <ul
+                                        class:list={[
+                                            "mt-4 flex flex-wrap gap-2",
+                                            isLeft
+                                                ? "md:justify-end"
+                                                : "md:justify-start",
+                                        ]}
+                                    >
+                                        {exp.technologies.map((tech) => (
+                                            <li class="text-xs sm:text-sm px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-white/80">
+                                                {tech}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {exp.links && exp.links.length > 0 && (
+                                    <ul
+                                        class:list={[
+                                            "mt-4 flex flex-wrap gap-2",
+                                            isLeft
+                                                ? "md:justify-end"
+                                                : "md:justify-start",
+                                        ]}
+                                    >
+                                        {exp.links.map((link) => (
+                                            <li>
+                                                <a
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="inline-flex items-center gap-1.5 text-xs sm:text-sm px-3 py-1.5 rounded-full bg-cyan-400/10 border border-cyan-400/40 text-cyan-200 hover:bg-cyan-400/20 hover:text-white hover:shadow-md hover:shadow-cyan-400/30 transition-all"
+                                                >
+                                                    <span>{link.label}</span>
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="w-3.5 h-3.5"
+                                                    >
+                                                        <path d="M7 17L17 7" />
+                                                        <path d="M7 7h10v10" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </article>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+    </div>
+</div>
