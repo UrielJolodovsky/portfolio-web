@@ -18,7 +18,7 @@ interface Props {
 const { title, image, content, tecnologias, github, website } = Astro.props;
 ---
 
-<div class="max-w-[330px] h-[460px] bg-white/15 transition rounded-lg shadow-inner shadow-white/25 p-3 relative">
+<div class="max-w-[330px] h-[460px] bg-white/15 hover:bg-white/20 transition-all duration-300 rounded-lg shadow-inner shadow-white/25 p-3 relative hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-400/20">
     <div class="rounded-lg pb-3">
         <img src={image} alt="" class="w-full h-full object-cover rounded-lg">
     </div>
