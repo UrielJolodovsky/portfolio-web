@@ -1,7 +1,7 @@
 <div id="contacto" class="w-full h-full bg-black/40 shadow-inner shadow-white/30 pb-5">
     <h2 class="font-semibold text-3xl text-center p-10">Contacto</h2>
     <p class="text-center text-white/80 text-base max-w-[600px] sm:px-0 px-4 mx-auto">Contáctame enviando un correo a <a target="_blank" class="text-white/80 hover:text-white/60 underline" href="mailto:urieljolo@gmail.com">urieljolo@gmail.com</a> o a través de este formulario.</p>
-        <form id="form-contact" class="flex flex-col gap-y-3 p-4 rounded-lg max-w-[550px] mx-auto" action="https://formspree.io/f/mleqjeep" method="POST">
+        <form id="form-contact" class="flex flex-col gap-y-3 p-4 rounded-lg max-w-[550px] mx-auto">
             <label class="text-white font-semibold px-2" for="nombre">Nombre</label>
             <input name="nombre" id="nombre" class="bg-white/20 border-2 border-black/40 rounded-lg p-2" type="text" required>
             <label class="text-white font-semibold px-2" for="correo">Correo</label>
@@ -38,64 +38,36 @@
         </div>
 </div>
 
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('form-submit')
-        const name = document.getElementById('nombre') as HTMLInputElement
-        const email = document.getElementById('correo') as HTMLInputElement
-        const message = document.getElementById('mensaje') as HTMLInputElement
-        const loader = document.getElementById('loader')
-        form?.addEventListener('click', async(e) => {
-            e.preventDefault()
-            if (name?.value === "") name.placeholder = 'Nombre requerido'
-            else if (email?.value === "") email.placeholder = 'Correo requerido'
-            else if (message?.value === "") message.placeholder = 'Mensaje requerido'
-            else {
-            loader?.classList.toggle('hidden')
-            name.classList.toggle('animate-pulse')
-            email.classList.toggle('animate-pulse')
-            message.classList.toggle('animate-pulse')
-            const res = await fetch("/api/sendEmail.json", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    name: name?.value,
-                    email: email?.value,
-                    message: message?.value,
-                }),
-            })
-            const data = await res.json()
-            loader?.classList.toggle('hidden')
-            name.classList.toggle('animate-pulse')
-            email.classList.toggle('animate-pulse')
-            message.classList.toggle('animate-pulse')
-            name.value = ""
-            email.value = ""
-            message.value = ""
-            name.placeholder = ''
-            email.placeholder = ''
-            message.placeholder = ''
-        }
-        })
-    })
-</script> -->
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('form-submit') as HTMLButtonElement
         const form_contact = document.getElementById('form-contact') as HTMLFormElement
         const name = document.getElementById('nombre') as HTMLInputElement
         const email = document.getElementById('correo') as HTMLInputElement
         const message = document.getElementById('mensaje') as HTMLInputElement
         const loader = document.getElementById('loader')
-        form?.addEventListener('submit', function (e) {
+
+        form_contact?.addEventListener('submit', async (e) => {
             e.preventDefault()
+            loader?.classList.toggle('hidden')
+            name.classList.toggle('animate-pulse')
+            email.classList.toggle('animate-pulse')
+            message.classList.toggle('animate-pulse')
+
+            await fetch('/api/sendEmail.json', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name.value,
+                    email: email.value,
+                    message: message.value,
+                }),
+            })
+
+            loader?.classList.toggle('hidden')
+            name.classList.toggle('animate-pulse')
+            email.classList.toggle('animate-pulse')
+            message.classList.toggle('animate-pulse')
             form_contact.reset()
-            // name.value = ""
-            // email.value = ""
-            // message.value = ""
         })
     })
 </script>

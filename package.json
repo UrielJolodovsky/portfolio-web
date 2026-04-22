@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
+    "@astrojs/vercel": "^10.0.4",
     "@fontsource-variable/onest": "^5.2.11",
     "@fontsource-variable/outfit": "^5.2.8",
     "animated-tailwindcss": "^4.0.0",
