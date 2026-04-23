@@ -10,26 +10,39 @@ import SectionTitle from "./SectionTitle.astro";
 
     <SectionTitle eyebrow="Mi trayectoria" title="Experiencia" accent="emerald" />
 
-    <div class="max-w-[800px] mx-auto px-5 sm:px-10 relative">
+    <div class="max-w-[900px] mx-auto px-5 sm:px-10 relative">
         <div
-            class="absolute left-5 sm:left-10 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-emerald-400/60 via-cyan-400/30 to-transparent"
+            class="absolute left-5 sm:left-10 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-emerald-400/60 via-cyan-400/30 to-transparent"
             aria-hidden="true"
         ></div>
 
         <ul class="list-none flex flex-col gap-y-10">
             {
-                experiences.map((exp) => {
+                experiences.map((exp, i) => {
+                    const isLeft = i % 2 === 0;
                     return (
-                        <li class="relative w-full">
+                        <li
+                            class:list={[
+                                "relative md:w-1/2",
+                                isLeft
+                                    ? "md:pr-10 md:self-start"
+                                    : "md:pl-10 md:self-end md:ml-auto",
+                            ]}
+                        >
                             <span
-                                class="absolute top-6 w-4 h-4 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 shadow-lg shadow-emerald-400/40 left-0 -translate-x-1/2"
+                                class:list={[
+                                    "absolute top-6 w-4 h-4 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 shadow-lg shadow-emerald-400/40",
+                                    "left-0 -translate-x-1/2",
+                                    isLeft &&
+                                        "md:left-auto md:right-0 md:translate-x-1/2",
+                                ]}
                                 aria-hidden="true"
                             ></span>
 
                             <article
                                 class:list={[
-                                    "ml-10 sm:ml-16 p-5 sm:p-6 rounded-xl bg-white/10 hover:bg-white/15 backdrop-blur-sm",
-                                    "shadow-inner shadow-white/20 border-l-4",
+                                    "ml-10 md:ml-0 p-5 sm:p-6 rounded-xl bg-white/10 hover:bg-white/15 backdrop-blur-sm",
+                                    "shadow-inner shadow-white/20 border-l-4 text-left",
                                     "transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-400/20",
                                     exp.accentColor,
                                 ]}
